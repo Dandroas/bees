@@ -1,0 +1,22 @@
+{
+  "bees": [
+    {
+      "type": "queen",
+      "lifespan": 100,
+      "damage": 8,
+      "count": 1
+    },
+    {
+      "type": "worker",
+      "lifespan": 75,
+      "damage": 10,
+      "count": 5
+    },
+    {
+      "type": "drone",
+      "lifespan": 50,
+      "damage": 12,
+      "count": 8
+    }
+  ]
+}

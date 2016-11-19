@@ -1,0 +1,92 @@
+.container
+  margin: auto
+  padding-right: 15px
+  padding-left: 15px
+
+@media (min-width: 768px)
+  .container
+    width: 750px
+
+@media (min-width: 992px)
+  .container
+    width: 970px
+
+@media (min-width: 1200px)
+  .container
+    width: 1170px
+
+button
+  font-family: inherit
+  font-size: 100%
+  padding: 10px 100px
+  color: rgba(0, 0, 0, 0.8)
+  border: none rgba(0, 0, 0, 0)
+  background-color: #E6E6E6
+  text-decoration: none
+  border-radius: 2px
+  &:hover
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0)
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.1)))
+    background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1))
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1))
+    background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1))
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1))
+
+@-webkit-keyframes flash
+  0%
+    background-color: Yellow
+    opacity: 1
+
+  25%
+    background-color: Orange
+
+  75%
+    background-color: Red
+
+  100%
+    background-color: #FFFFFF
+
+
+.active
+  -webkit-animation-name: flash
+  -webkit-animation-duration: 500ms
+  -webkit-animation-iteration-count: 1
+  -webkit-animation-timing-function: linear
+  -moz-animation-name: flash
+  -moz-animation-duration: 500ms
+  -moz-animation-iteration-count: 1
+  -moz-animation-timing-function: linear
+
+=bee($height)
+    background-size: contain
+    width: $height
+    height: $height
+    margin: 5px
+    padding: 10px
+    border-radius: 10px
+
+.queen
+  background: url('../images/queen.gif') no-repeat center green
+  +bee(100px)
+
+.drone
+  background: url('../images/drone.gif') no-repeat center greenyellow
+  +bee(100px)
+
+.worker
+  background: url('../images/worker.gif') no-repeat center lightgreen
+  +bee(100px)
+
+.lifespan
+  text-align: center
+  border-radius: 5px
+
+.row
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: center
+
+body
+  background: mintcream
+  font-family: "Helvetica Neue", Helvetica, sans-serif
