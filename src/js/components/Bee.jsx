@@ -1,15 +1,16 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 
-let bee = class Bee extends React.Component {
-    render() {
-        let bee = this.props.bee;
-        let lifeSpanClassName = bee.status == 'hit' ? "lifespan active" : "lifespan";
-        return <div>
-            <div className={bee.type}>
-            </div>
-            <p className={lifeSpanClassName}>{bee.lifespan}</p>
-        </div>;
-    }
+const bee = ({bee}) => {
+    let lifeSpanClassName = bee.status == 'hit' ? "lifespan active" : "lifespan";
+    return <div>
+        <div className={bee.type}>
+        </div>
+        <p className={lifeSpanClassName}>{bee.lifespan}</p>
+    </div>;
+};
+
+bee.propTypes = {
+    bee: PropTypes.object.isRequired
 };
 
 export default bee;

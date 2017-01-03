@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react'
 
-let hitButton = class HitButton extends React.Component {
-    render() {
-        return <button onClick={() => this.props.onClick()}>Hit</button>
-    }
+const hitButton = ({onClick}) => {
+    return(<button onClick={() => onClick()}>Hit</button>);
+};
+
+hitButton.propTypes = {
+    onClick: PropTypes.func.isRequired
 };
 
 export default hitButton;
