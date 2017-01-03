@@ -14,7 +14,6 @@ class Game extends React.Component {
             status: "in_game"
         };
         this.populateBoard();
-
     }
 
     populateBoard() {
@@ -37,15 +36,12 @@ class Game extends React.Component {
 
     handleClick() {
         let board = this.state.board;
+        this.setAllBeesDormant(board);
+
         const random = this.getIndexOfRandomBee();
-
-        //Sets all the bees back to being dormant.
-        board.map((bee) => {
-            return bee.status = "dormant"
-        });
-
         let beeBeingHit = board[random];
         beeBeingHit.lifespan = beeBeingHit.lifespan - beeBeingHit.damage;
+
         //And now setting the hit, so we can indicate which be got hit.
         beeBeingHit.status = "hit";
         if (beeBeingHit.lifespan <= 0) {
@@ -56,6 +52,12 @@ class Game extends React.Component {
         }
 
         this.setState(Object.assign({}, this.state, {board: board}));
+    }
+
+    setAllBeesDormant(board) {
+        board.map((bee) => {
+            return bee.status = "dormant"
+        });
     }
 
     getIndexOfRandomBee() {
